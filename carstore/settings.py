@@ -29,7 +29,12 @@ DEBUG = True
 
 # Other settings...
 import os
-ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    os.environ.get('RENDER_EXTERNAL_HOSTNAME', 'carstore-5sl3.onrender.com')
+]
 
 
 # Add your Render domain
@@ -128,11 +133,6 @@ STATIC_URL = "static/"
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# 配置静态文件的根目录
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
