@@ -25,7 +25,17 @@ SECRET_KEY = "django-insecure-(4u@l9h&_2xrlcz!kte##$%6_g*$i+il!w7q_2*s$d#-2&@v^@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['carstore-5sl3.onrender.com']
+# settings.py
+
+# Other settings...
+
+ALLOWED_HOSTS = ['yourdomain.com', 'localhost', '127.0.0.1']
+
+# Add your Render domain
+ALLOWED_HOSTS.append('carstore-5sl3.onrender.com')
+
+# Or simply set it directly
+ALLOWED_HOSTS = ['yourdomain.com', 'localhost', '127.0.0.1', 'carstore-5sl3.onrender.com']
 
 
 
