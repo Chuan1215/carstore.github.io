@@ -28,16 +28,12 @@ DEBUG = True
 # settings.py
 
 # Other settings...
+import os
+ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
-ALLOWED_HOSTS = ['yourdomain.com', 'localhost', '127.0.0.1']
 
 # Add your Render domain
 ALLOWED_HOSTS.append('carstore-5sl3.onrender.com')
-
-# Or simply set it directly
-ALLOWED_HOSTS = ['yourdomain.com', 'localhost', '127.0.0.1', 'carstore-5sl3.onrender.com']
-
-
 
 # Application definition
 
@@ -128,18 +124,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# 配置静态文件的 URL
-STATIC_URL = '/static/'
-
-# 配置静态文件的根目录
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATIC_URL = "static/"
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# 配置静态文件的根目录
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
